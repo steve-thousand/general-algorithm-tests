@@ -53,7 +53,7 @@ def verify(algorithm, name):
     min = sys.maxint
     max = 0
     for i in range(0, TOTAL_RUNS):
-        arr = range(1, 2000)
+        arr = range(1, 3000)
         random.shuffle(arr)
 
         start = time.time()
@@ -67,7 +67,7 @@ def verify(algorithm, name):
         if elapsed < min:
             min = elapsed
 
-    print(name + " : avg {0:.2f}s, min {0:.2f}s, max {0:.2f}s".format(total/TOTAL_RUNS, min, max))
+    print(name + " : avg {0:.2f}s, min {1:.2f}s, max {2:.2f}s".format(total/TOTAL_RUNS, min, max))
 
 verify(insertion_sort, "insertion")
 verify(selection_sort, "selection")
