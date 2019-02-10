@@ -37,13 +37,14 @@ def selection_sort(arr):
 def insertion_sort(arr):
     for i in range(1, len(arr)):
         # n
-        index = i
-        while index > 0 and arr[index - 1] > arr[index]:
+        for j in range(i, 0, -1):
             # worst case n, best case 1
-            scratch = arr[index]
-            arr[index] = arr[index - 1]
-            arr[index - 1] = scratch
-            index -= 1
+            if arr[j - 1] > arr[j]:
+                scratch = arr[j]
+                arr[j] = arr[j - 1]
+                arr[j - 1] = scratch
+            else:
+                break
     return arr
 
 TOTAL_RUNS = 10
